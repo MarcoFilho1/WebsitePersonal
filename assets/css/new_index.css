@@ -563,99 +563,52 @@ nav a:hover::after {
 */
 
 .vantagens {
-  background-image: url('../images/LOGOVICTORPERRSONAL.png');
+  position: relative;
+  background-image: url('../images/BackgroundPlanosRedimensionada.jpeg');
   background-size: cover;
   background-position: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 100px 20px;
   color: #fff;
-  position: relative;
+  overflow: hidden;
 }
 
 .vantagens::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); 
-  z-index: 1;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
 .vantagens h2 {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  color: #fff;
+  font-weight: 700;
 }
 
 .vantagens__conteudo {
   display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  justify-content: center;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
-}
-
-.vantagens__lista {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex: 1;
-  max-width: 250px;
-}
-
-.vantagens__lista li {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-  border: 1px solid #fff;
-  text-align: center;
-}
-
-.vantagens__lista li.active {
-  font-weight: bold;
-  background-color: #8a2be2;
-  color: white;
-  border-radius: 4px;
-}
-
-
-.vantagens__lista li:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.vantagens__descricao {
-  flex: 2;
-  max-width: 600px;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 150px; /* Altura mínima para centralizar */
-  border-radius: 8px;
-  padding: 20px;
-  color: #fff;
-  text-align: center;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.descricao-item {
-  display: none;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  animation: fadeIn 0.3s ease;
-  color: #fff;
-}
 
-.descricao-item.ativo {
-  display: block;
-}
+
+
+
+
+
+
+
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -673,6 +626,19 @@ nav a:hover::after {
   text-align: center;
 }
 
+.produto {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
 .produtos__titulo {
   font-size: 2.5rem;
   color: var(--cor-primaria);
@@ -681,35 +647,46 @@ nav a:hover::after {
 
 .produtos__lista {
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.produto__descricao {
+  font-size: 1rem;
+  color: #555;
 }
 
 .produto {
-  flex: 1;
-  min-width: 280px;
-  height: 250px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.produto:hover {
-  transform: scale(1.03);
+.produto:hover,
+.produto:focus {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+  outline: none;
 }
 
 .produto__titulo {
   font-size: 1.8rem;
   font-weight: bold;
   z-index: 2;
+}
+
+.produto__icone {
+  margin-bottom: 15px;
+  color: #8a2be2; /* você pode mudar a cor para combinar com o site */
 }
 
 
