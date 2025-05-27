@@ -1,0 +1,999 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;700&display=swap');
+
+/* ======== Animações ======== */
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes slideUp {
+  from { transform: translate(-50%, 100%); }
+  to { transform: translate(-50%, 0); }
+}
+
+/* ======== RESET & BASE ======== */
+* { margin:0; padding:0; box-sizing:border-box }
+body {
+  font-family:'Montserrat', sans-serif;
+  background:#f5f5f5; color:#333;
+  line-height:1.6; letter-spacing:.5px;
+  -webkit-font-smoothing:antialiased;
+  padding-top:125px;
+}
+
+/* ======== TOP BAR ======== */
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 6px 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  z-index: 1001;
+  height: 30px;
+}
+
+.social-icons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #1f94f4;
+}
+
+.contact-info {
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
+}
+
+.btn {
+  background-color: #145f9d;
+  color: white;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 2px;
+}
+
+.btn:hover {
+  background-color: #1f94f4;
+}
+
+/* ======== CABEÇALHO ======== */
+header {
+  position:fixed; top:0; width:100%; z-index:1000;
+  background:#000; color:#fff; padding:12px 0;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.header-container {
+  max-width:1200px; 
+  margin:0 auto;
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center;
+  padding:0 15px;
+  position: relative;
+}
+
+.logo {
+  margin-top: 15px;
+  z-index: 1002;
+}
+
+.logo img { 
+  width:100px; 
+  transition:transform .3s 
+}
+
+.logo:hover img { 
+  transform:scale(1.05) 
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav ul {
+  list-style:none; 
+  display:flex; 
+  gap:8px;
+}
+
+nav a {
+  position:relative; 
+  display:inline-block;
+  text-decoration:none; 
+  color:#fff; 
+  font-weight:600;
+  padding:6px 12px; 
+  border-radius:6px; 
+  font-size:.9rem;
+  transition:all .3s cubic-bezier(.25,.46,.45,.94);
+  white-space:nowrap;
+}
+
+nav a:hover { 
+  background:#1f94f4; 
+  transform:translateX(5px) 
+}
+
+nav a::after {
+  content:''; 
+  position:absolute; 
+  bottom:0; 
+  left:0;
+  width:0; 
+  height:2px; 
+  background:#fff;
+  transition:width .3s ease;
+}
+
+nav a:hover::after { 
+  width:100% 
+}
+
+/* Dropdown */
+.dropdown { 
+  position:relative 
+}
+
+.dropdown-content {
+  position:absolute; 
+  top:100%; 
+  left:0;
+  background:#333; 
+  border-radius:6px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  min-width:160px; 
+  opacity:0; 
+  visibility:hidden;
+  transform:translateX(-10px); 
+  transition:all .3s ease;
+  z-index:999;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity:1; 
+  visibility:visible; 
+  transform:translateX(0);
+}
+
+.dropdown-content a {
+  display:block; 
+  padding:8px 12px;
+  font-size:.85rem; 
+  color:#fff;
+  transform:translateX(-10px); 
+  opacity:0;
+  transition:all .3s ease;
+}
+
+.dropdown:hover .dropdown-content a {
+  transform:translateX(0); 
+  opacity:1;
+}
+
+.dropdown-content a:hover {
+  background:#575757; 
+  padding-left:15px;
+}
+
+/* Contato */
+.contact {
+  display:flex; 
+  align-items:center; 
+  gap:6px; 
+  font-size:.9rem;
+  white-space:nowrap;
+  margin-top: 15px;
+}
+
+.contact i { 
+  color:#1f94f4; 
+  font-size:1em 
+}
+
+
+/* ======== HERO / CARROSSEL ======== */
+.hero {
+  display:flex; gap:30px;
+  align-items:center; margin-top:20px;
+  height:80vh;
+}
+
+/* container do carrossel */
+.hero-carousel {
+  position:relative; flex:1;
+  overflow:hidden; height:100%;
+  opacity:0; animation:fadeIn 1s ease-out .2s forwards;
+}
+
+/* trilha de slides */
+.carousel-track {
+  display:flex; transition:transform .5s ease-in-out;
+  height:100%;
+}
+
+/* cada slide */
+.carousel-slide {
+    position: relative;
+    min-width: 100%;
+    height: 100%; /* Adicione isso */
+    background: inherit;
+}   
+
+/* fundo borrado via pseudo-elemento */
+.carousel-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-image: var(--bg);      /* define apenas a imagem */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(6px);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+/* imagem n�tida */
+.slide-img {
+  position: relative;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  opacity: 0;
+  animation: fadeIn 1s ease-out .4s forwards;
+  object-fit: cover; /* Garante que a imagem preencha o espa�o */
+  height: 80%; /* Altura ajust�vel conforme necessidade */
+  
+}
+
+/* bot�es do carrossel */
+.carousel-btn {
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:rgba(0,0,0,.5); border:none; color:#fff;
+  font-size:1.8rem; padding:.2em .5em;
+  cursor:pointer; z-index:2; border-radius:4px;
+  transition:background .2s;
+  opacity:0; animation:fadeIn 1s ease-out .6s forwards;
+}
+.carousel-btn:hover { background:rgba(0,0,0,.7) }
+.prev-btn { left:10px }
+.next-btn { right:10px }
+
+/* descri��o do hero */
+.hero-description {
+  flex:1; padding:30px;
+  background:rgba(245,245,245,.95); border-radius:10px;
+  opacity:0; animation:fadeIn 1s ease-out .8s forwards;
+}
+.hero-description h1 { font-size:2.2rem; margin-bottom:20px; color:#1a1a1a }
+.hero-description p { font-size:1rem; margin-bottom:25px; color:#444 }
+
+
+/* ======== QUEM SOMOS ======== */
+.quemsomos {
+  background: linear-gradient(45deg, #003366, #1f94f4);
+  color: white;
+  padding: 80px 20px;
+}
+
+.quemsomos__container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quemsomos__imagem {
+  flex: 0 1 45%; /* Não cresce, encolhe até 45% */
+  min-width: 300px; /* Largura mínima */
+  max-width: 500px; /* Largura máxima */
+}
+
+
+.quemsomos__imagem img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.quemsomos__conteudo {
+  flex: 1;
+}
+
+.quemsomos__conteudo h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.quemsomos__conteudo p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+/* Valores */
+.quemsomos__valores {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.valor {
+  background: white;
+  color: #003366;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.valor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.valor i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1f94f4;
+}
+
+.valor h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.valor p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .quemsomos__container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .quemsomos__valores {
+    flex-direction: column;
+  }
+}
+
+
+/* ====== DESTAQUES E VALORES ======== */
+.destaques {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.destaques li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.destaques li::before {
+  content: "";
+  color: #1f94f4;
+  position: absolute;
+  left: -20px;
+}
+
+.valores-lista p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.valores-lista i {
+  color: #1f94f4;
+  min-width: 25px;
+  text-align: center;
+}
+
+
+
+
+
+
+/* ========== SECTIONS: PRODUTOS, CLIENTES, VANTAGENS ==========
+
+*/
+
+.feed-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  animation: fadeIn 1s ease;
+}
+
+.feed-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  border-left: 5px solid #1f94f4;
+  padding-left: 15px;
+}
+
+.feed-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.feed-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feed-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.feed-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.feed-card h3 {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.feed-card p {
+  font-size: 0.95rem;
+  color: #555;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.feed-card .button {
+  align-self: flex-start;
+  font-size: 0.9rem;
+}
+
+/* ========== SEÇÃO DE CLIENTES ==========
+*/
+
+.clientes {
+  padding: 4rem 2rem;
+  background-color: #f8f8f8;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.clientes__titulo {
+  font-size: 2.5rem;
+  color: var(--cor-primaria);
+  margin-bottom: 2rem;
+}
+
+.clientes__carrossel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.clientes__faixa {
+  display: flex;
+  gap: 2rem; /* estava 3rem */
+  animation: deslizar 30s linear infinite;
+  align-items: center;
+  width: max-content;
+}
+ 
+.clientes__faixa img {
+  height: 125px;
+  max-width: 150px;
+  width: auto;
+  object-fit: contain;
+  filter: none;
+  opacity: 0.7;
+  transition: transform 0.3s, filter 0.3s, opacity 0.3s;
+}
+
+.clientes__faixa img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes deslizar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ========== SEÇÃO DE VANTAGENS ==========
+*/
+
+.vantagens {
+  background-image: url('../images/galpao-lona-grande.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: #fff;
+  position: relative;
+}
+
+.vantagens::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.vantagens h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.vantagens__conteudo {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.vantagens__lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  max-width: 250px;
+}
+
+.vantagens__lista li {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 1px solid #fff;
+  text-align: center;
+}
+
+.vantagens__lista li.active {
+  font-weight: bold;
+  background-color: #1f94f4;
+  color: white;
+  border-radius: 4px;
+}
+
+
+.vantagens__lista li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.vantagens__descricao {
+  flex: 2;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px; /* Altura mínima para centralizar */
+  border-radius: 8px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.descricao-item {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease;
+  color: #fff;
+}
+
+.descricao-item.ativo {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* ========== SEÇÃO DE PRODUTOS ==========
+*/
+
+.produtos {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.produtos__titulo {
+  font-size: 2.5rem;
+  color: var(--cor-primaria);
+  margin-bottom: 2rem;
+}
+
+.produtos__lista {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.produto {
+  flex: 1;
+  min-width: 280px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.produto:hover {
+  transform: scale(1.03);
+}
+
+.produto__titulo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+
+/* ========== RESPONSIVO ==========
+*/
+
+@media(max-width: 768px) {
+  .feed-card img {
+    height: 150px;
+  }
+
+  .vantagens-list {
+    grid-template-columns: 1fr;
+  }
+
+  .clientes-gallery img {
+    height: 50px;
+  }
+}
+
+@media(max-width: 480px) {
+  .feed-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+/* ======== BOT�ES ======== */
+.button {
+  display:inline-block; padding:10px 25px;
+  background:#1f94f4; color:#fff; border-radius:6px;
+  text-decoration:none; font-weight:600;
+  transition:all .3s ease;
+}
+.button:hover { background:#1676c2; transform:translateY(-2px) }
+
+/* ======== COOKIE NOTICE ======== */
+.cookie-notice {
+  position:fixed; bottom:0; left:50%;
+  transform:translateX(-50%);
+  width:100%; background:rgba(0,0,0,.9); color:#fff;
+  text-align:center; padding:15px 30px;
+  border-radius:10px 10px 0 0; z-index:9999;
+  animation:slideUp .5s ease-out;
+}
+
+.cookie-notice button {
+  margin-top:10px; padding:8px 20px;
+  background:#1f94f4; color:#fff; border:none;
+  border-radius:5px; cursor:pointer;
+  transition:all .3s ease;
+}
+.cookie-notice button:hover { background:#1676c2 }
+
+/* ======== RODAP� ======== */
+footer.rodape {
+  background:#000; color:#fff; text-align:center;
+  padding:40px 20px; margin-top:80px;
+}
+
+/* ========== RESPONSIVO ========== */
+/* ========== ESCONDENDO O MENU HAMBURGUER DESKTOP =======*/
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  
+  /* ======== MENU HAMBURGUER ======== */
+  .hamburger {
+    display: block;
+    position: relative;
+    z-index: 1001;
+    order: 2;
+    padding: 5px; /* Reduz padding para ocupar menos espa?o */
+    font-size: 1.3rem;
+    margin-top: 0; /* Remove margem extra */
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    right: -50%;
+    width: 50%;
+    background: #000;
+    transition: all 0.3s ease-out;
+    z-index: 999;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  }
+
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    display: none;
+  }
+
+  nav.active + .nav-overlay {
+    display: block;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav.active ~ .hamburger {
+    display: none;
+  }
+
+  nav ul.menu {
+    padding-top: 70px; /* Altura do header */
+    flex-direction: column;
+    padding: 0;
+  }
+
+  nav ul.menu li {
+    width: 100%;
+    border-bottom: 1px solid #333;
+  }
+
+  /* 1) Desativa TUDO de hover/underline nas ?ncoras */
+  nav ul.menu li a,
+  nav ul.menu li a:visited,
+  nav ul.menu li a:hover,
+  nav ul.menu li a:focus {
+    display: block;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none !important;
+  }
+
+  /* elimina a barra de hover que vinha do ::after */
+  nav ul.menu li a::after,
+  nav ul.menu li a:hover::after {
+    width: 0 !important;
+    background: none !important;
+  }
+
+  /* 2) Submenu sempre oculto, s? abre com .active */
+  .dropdown-content {
+    position: static;
+    background: #222;
+    display: none !important;
+    box-shadow: none;
+  }
+  .dropdown.active .dropdown-content {
+    display: block !important;
+  }
+
+  .dropdown-content a {
+    padding: 12px 25px;
+    font-size: 0.9em;
+  }
+
+  /* 3) Setinha fixa, sem sublinhado */
+  .dropdown > a {
+    position: relative;
+    padding-right: 30px; /* espa?o p/ a seta */
+  }
+  .dropdown > a::after {
+    content: '▾';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    transition: transform 0.2s ease;
+    text-decoration: none !important;
+  }
+  .dropdown.active > a::after {
+    transform: translateY(-50%) rotate(-90deg);
+    text-decoration: none !important;
+  }
+
+  .contact {
+    display: none;
+  }
+
+  /* ======== AJUSTES GERAIS ======== */
+  .header-container {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    order: 0;
+  }
+
+  header {
+    padding: 0; /* Reduzi o padding vertical */
+    height: 70px; /* Defini uma altura fixa */
+  }
+
+  .header-container {
+    padding: 5px 10px !important; /* Reduzir espa?amento interno */
+    min-height: 60px; /* Garantir altura m?nima */
+  }
+
+  .logo img {
+    width: 60px; /* Reduzi um pouco o tamanho da logo */
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .hero-carousel {
+    height: 250px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: -10px; /* Compensar espa?o residual */
+  }
+  
+  .carousel-track {
+    height: 100%
+  }
+
+  .carousel-slide {
+    height: 250px;
+    position: relative;
+  }
+
+  .carousel-btn {
+    font-size: 1.2rem !important;
+    padding: 5px 8px !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .prev-btn {
+    left: 2px;
+  }
+
+  .next-btn {
+    right: 2px;
+  }
+
+  .slide-img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Garante o enquadramento correto */
+  }
+
+  .hero-description {
+    margin-top: 10px;
+    padding: 15px;
+  }
+}
+
+
+@media(max-width: 480px) {
+  nav a {
+    font-size: .85rem;
+    padding: 5px 8px;
+  }
+
+  .contact {
+    font-size: .85rem;
+    
+  }
+  
+  .hero-description h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description p {
+    font-size: 0.9rem;
+  }
+}
+
