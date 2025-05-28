@@ -36,11 +36,10 @@ body {
 }
 
 .social-icons {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   gap: 12px;
+  justify-content: center;
+  flex: 1;
 }
 
 .social-icons a {
@@ -60,23 +59,8 @@ body {
   gap: 5px;
 }
 
-.btn {
-  background-color: #6a0dad;
-  color: white;
-  padding: 6px 12px;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-  font-size: 13px;
-  border-radius: 2px;
-}
 
-.btn:hover {
-  background-color: #8a2be2;
-}
+
 
 /* ======== CABEÇALHO ======== */
 header {
@@ -110,13 +94,16 @@ header {
 }
 
 nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
   margin-top: 15px;
 }
 
 nav ul {
-  list-style:none; 
-  display:flex; 
-  gap:8px;
+  list-style: none; 
+  display: flex; 
+  gap: 8px;
 }
 
 nav a {
@@ -198,20 +185,8 @@ nav a:hover::after {
   padding-left:15px;
 }
 
-/* Contato */
-.contact {
-  display:flex; 
-  align-items:center; 
-  gap:6px; 
-  font-size:.9rem;
-  white-space:nowrap;
-  margin-top: 15px;
-}
 
-.contact i { 
-  color:#8a2be2; 
-  font-size:1em 
-}
+
 
 .planos {
   padding: 50px 20px;
