@@ -757,7 +757,7 @@ footer.rodape {
     position: fixed;
     top: 30px;
     right: -100%;
-    width: 50%;
+    width: 55%;
     background: #000;
     transition: all 0.3s ease-out;
     z-index: 999;
