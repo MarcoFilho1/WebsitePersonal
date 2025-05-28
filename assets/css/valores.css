@@ -225,6 +225,7 @@ nav a:hover::after {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.2s ease;
+  position: relative;
 }
 
 .plano:hover {
@@ -280,6 +281,31 @@ nav a:hover::after {
   background-color: #222;
 }
 
+/* ======== COOKIE NOTICE ======== */
+.cookie-notice {
+  position:fixed; bottom:0; left:50%;
+  transform:translateX(-50%);
+  width:100%; background:rgba(0,0,0,.9); color:#fff;
+  text-align:center; padding:15px 30px;
+  border-radius:10px 10px 0 0; z-index:9999;
+  animation:slideUp .5s ease-out;
+}
+
+.cookie-notice button {
+  margin-top:10px; padding:8px 20px;
+  background:#8a2be2; color:#fff; border:none;
+  border-radius:5px; cursor:pointer;
+  transition:all .3s ease;
+}
+.cookie-notice button:hover { background:#6a0dad }
+
+
+/* ======== RODAP? ======== */
+footer.rodape {
+  background:#000; color:#fff; text-align:center;
+  padding:40px 20px; margin-top:80px;
+}
+
 
 
 
@@ -308,10 +334,10 @@ nav a:hover::after {
   }
 
   nav {
-    position: absolute;
-    top: 100%;
-    right: -50%;
-    width: 50%;
+    position: fixed;
+    top: 30px;
+    right: -100%;
+    width: 70%;
     background: #000;
     transition: all 0.3s ease-out;
     z-index: 999;
@@ -349,7 +375,7 @@ nav a:hover::after {
 
   nav ul.menu li {
     width: 100%;
-    border-bottom: 1px solid #333;
+    border-bottom: 0px solid #333;
   }
 
   /* 1) Desativa TUDO de hover/underline nas ?ncoras */
@@ -366,8 +392,10 @@ nav a:hover::after {
   /* elimina a barra de hover que vinha do ::after */
   nav ul.menu li a::after,
   nav ul.menu li a:hover::after {
+    content: none !important;
     width: 0 !important;
     background: none !important;
+    text-decoration: none !important;
   }
 
   /* 2) Submenu sempre oculto, s? abre com .active */
@@ -485,6 +513,22 @@ nav a:hover::after {
     margin-top: 10px;
     padding: 15px;
   }
+
+  .top-bar .social-icons {
+    display: none;
+  }
+
+  .social-icons-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .social-icons-mobile a {
+    color: white;
+    font-size: 1.4rem;
+  }
 }
 
 
@@ -517,4 +561,6 @@ nav a:hover::after {
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: bold;
+ 
 }
+
