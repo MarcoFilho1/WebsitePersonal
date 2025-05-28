@@ -897,7 +897,7 @@ footer.rodape {
     max-width: 100%;
     position: relative;
     overflow: hidden;
-    margin-top: 0px; /* Compensar espa?o residual */
+    margin-top: -10px; /* Compensar espa?o residual */
   }
   
   .carousel-track {
