@@ -739,7 +739,7 @@ footer.rodape {
 
 @media (max-width: 768px) {
   body {
-    padding-top: 60px;
+    padding-top: 70px;
   }
   
   /* ======== MENU HAMBURGUER ======== */
@@ -897,7 +897,7 @@ footer.rodape {
     max-width: 100%;
     position: relative;
     overflow: hidden;
-    margin-top: -10px; /* Compensar espa?o residual */
+    margin-top: 0px; /* Compensar espa?o residual */
   }
   
   .carousel-track {
