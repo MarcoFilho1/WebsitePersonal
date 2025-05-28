@@ -14,7 +14,7 @@ body {
   background:#f5f5f5; color:#333;
   line-height:1.6; letter-spacing:.5px;
   -webkit-font-smoothing:antialiased;
-  padding-top:125px;
+  padding-top:155px;
 }
 
 /* ======== TOP BAR ======== */
@@ -24,7 +24,7 @@ body {
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #000;
   padding: 6px 15px;
@@ -36,11 +36,9 @@ body {
 }
 
 .social-icons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex: 1;
-}
+    display: flex;
+    gap: 12px;
+  }
 
 .social-icons a {
   color: white;
@@ -49,18 +47,14 @@ body {
   transition: color 0.3s ease;
 }
 
+/* SÛ mostra os Ìcones do menu lateral no mobile */
+.mobile-social-icons {
+  display: none;
+}
+
 .social-icons a:hover {
   color: #8a2be2;
 }
-
-.contact-info {
-  margin-left: auto;
-  display: flex;
-  gap: 5px;
-}
-
-
-
 
 /* ======== CABE«ALHO ======== */
 header {
@@ -101,9 +95,9 @@ nav {
 }
 
 nav ul {
-  list-style: none; 
-  display: flex; 
-  gap: 8px;
+  list-style:none; 
+  display:flex; 
+  gap:8px;
 }
 
 nav a {
@@ -185,101 +179,82 @@ nav a:hover::after {
   padding-left:15px;
 }
 
-
-
-
-.planos {
-  padding: 50px 20px;
+h1 {
   text-align: center;
-  background-color: #fff;
+  color: #8a2be2; /* tom de verde/azul vibrante */
+  margin-bottom: 30px;
+  font-weight: 700;
 }
 
-.planos__titulo {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.planos__titulo::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background-color: #6a0dad;
-  margin: 10px auto 0;
-}
-
-.planos__lista {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.plano {
-  background-color: #f4f4f4;
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #8a2be2;
+  padding: 20px;
   border-radius: 10px;
-  padding: 30px;
-  width: 280px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s ease;
-  position: relative;
+  box-shadow: 0 0 10px #6a0dad;
 }
 
-.plano:hover {
-  transform: translateY(-5px);
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #6a0dad;
 }
 
-.plano.destaque {
-  background-color: #6a0dad;
-  color: white;
-}
-
-.plano__duracao {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.plano__preco {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.plano__beneficios {
+summary {
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px;
   list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  outline: none;
+  color: #ffffff;
+  user-select: none;
 }
 
-.plano__beneficios .inativo {
-  text-decoration: line-through;
-  color: #888;
+summary::-webkit-details-marker {
+  display: none;
 }
 
-.plano__pix {
-  font-size: 0.85rem;
-  margin-bottom: 10px;
+.faq-item[open] summary {
+  color: #ffffff;
 }
 
-.plano__botao {
-  display: inline-block;
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+.faq-item p {
+  padding: 10px 15px 15px 15px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #6a0dad;
+  border-radius: 0 0 10px 10px;
+  margin-top: 0;
 }
 
-.plano__botao:hover {
-  background-color: #222;
+.faq-item p a {
+  color: #8a2be2;
+  text-decoration: underline;
 }
+
+.faq-item p a:hover {
+  color: #8a2be2;
+}
+
+.faq-item .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-item.open .content {
+  max-height: 500px; /* ajuste conforme o conte˙do m·ximo esperado */
+}
+
+
+
+
+
+
+
+
 
 /* ======== COOKIE NOTICE ======== */
 .cookie-notice {
@@ -299,15 +274,11 @@ nav a:hover::after {
 }
 .cookie-notice button:hover { background:#6a0dad }
 
-
-/* ======== RODAP? ======== */
+/* ======== RODAPù ======== */
 footer.rodape {
   background:#000; color:#fff; text-align:center;
   padding:40px 20px; margin-top:80px;
 }
-
-
-
 
 /* ========== RESPONSIVO ========== */
 /* ========== ESCONDENDO O MENU HAMBURGUER DESKTOP =======*/
@@ -550,17 +521,5 @@ footer.rodape {
   .hero-description p {
     font-size: 0.9rem;
   }
-}
-.selo-recomenda {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: #8a2be2;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
- 
 }
 
