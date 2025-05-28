@@ -934,6 +934,7 @@ footer.rodape {
   }
   
   .hero-carousel {
+    padding-top: 50px;
     height: 250px;
     max-width: 100%;
     position: relative;
