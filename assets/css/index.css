@@ -179,20 +179,6 @@ nav a:hover::after {
   padding-left:15px;
 }
 
-/* Contato */
-.contact {
-  display:flex; 
-  align-items:center; 
-  gap:6px; 
-  font-size:.9rem;
-  white-space:nowrap;
-  margin-top: 15px;
-}
-
-.contact i { 
-  color:#8a2be2; 
-  font-size:1em 
-}
 
 
 /* ======== HERO / CARROSSEL ======== */
