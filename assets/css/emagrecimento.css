@@ -209,7 +209,6 @@ nav a:hover::after {
 }
 
 .hero-content h1 {
-  font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   color: var(--black);
   margin-bottom: 1rem;
@@ -242,7 +241,6 @@ nav a:hover::after {
 }
 
 .metodologia h2 {
-  font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
   color: var(--black);
   margin-bottom: 1rem;
@@ -295,7 +293,6 @@ nav a:hover::after {
 }
 
 .depoimentos h2 {
-  font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }
@@ -499,7 +496,6 @@ nav a:hover::after {
   color: #d88cff;
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  font-family: 'Playfair Display', serif;
 }
 
 .cta-final p {
