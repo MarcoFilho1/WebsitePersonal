@@ -79,7 +79,7 @@ header {
 }
 
 .logo img { 
-  width:100px; 
+  width:110px; 
   transition:transform .3s 
 }
 
@@ -186,67 +186,62 @@ h1 {
   font-weight: 700;
 }
 
+/* ======== Se??o FAQ ======== */
+.faq-emagrecimento {
+  background: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #db700c;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #bb6504;
+  text-align: left;
 }
 
 .faq-item {
-  margin-bottom: 15px;
-  border-bottom: 1px solid #bb6504;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
 }
 
-summary {
-  font-size: 1.1rem;
+.faq-pergunta {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 0;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 600;
-  cursor: pointer;
-  padding: 12px;
-  list-style: none;
-  outline: none;
-  color: #ffffff;
-  user-select: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item[open] summary {
-  color: #ffffff;
-}
-
-.faq-item p {
-  padding: 10px 15px 15px 15px;
   font-size: 1rem;
-  line-height: 1.5;
-  color: #ffffff;
-  background-color: #bb6504;
-  border-radius: 0 0 10px 10px;
-  margin-top: 0;
+  cursor: pointer;
 }
 
-.faq-item p a {
-  color: #db700c;
-  text-decoration: underline;
+.faq-pergunta i {
+  transition: transform 0.3s ease;
 }
 
-.faq-item p a:hover {
-  color: #db700c;
+.faq-pergunta.active i {
+  transform: rotate(180deg);
 }
 
-.faq-item .content {
+.faq-item.ativo .faq-resposta {
+  max-height: 500px; 
+  padding: 0 0 1rem; 
+}
+
+.faq-resposta {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height 0.3s ease;
+  padding: 0 0 0rem; /* padding s? se quiser espa?amento, deixe 0 se quiser animar */
 }
 
-.faq-item.open .content {
-  max-height: 500px; /* ajuste conforme o conteúdo máximo esperado */
+.faq-pergunta.active i {
+  transform: rotate(180deg);
 }
+
 
 
 

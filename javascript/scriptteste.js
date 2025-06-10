@@ -113,6 +113,30 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         });
     }
+    // ========= FAQ TOGGLE =========
+    document.querySelectorAll('.faq-pergunta').forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.faq-item');
+            const resposta = item.querySelector('.faq-resposta');
+
+            // Fecha outros FAQ abertos, se quiser comportamento tipo "acordeão"
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.querySelector('.faq-resposta').style.maxHeight = null;
+                    otherItem.classList.remove('ativo');
+                }
+            });
+
+            // Alterna a exibição da resposta atual
+            if (item.classList.contains('ativo')) {
+                resposta.style.maxHeight = null;
+                item.classList.remove('ativo');
+            } else {
+                resposta.style.maxHeight = resposta.scrollHeight + 'px';
+                item.classList.add('ativo');
+            }
+        });
+    });
 });
 
 
