@@ -53,7 +53,7 @@ body {
 }
 
 .social-icons a:hover {
-  color: #8a2be2;
+  color: #db700c;
 }
 
 /* ======== CABE«ALHO ======== */
@@ -114,7 +114,7 @@ nav a {
 }
 
 nav a:hover { 
-  background:#8a2be2; 
+  background:#db700c; 
   transform:translateX(5px) 
 }
 
@@ -175,13 +175,13 @@ nav a:hover::after {
 }
 
 .dropdown-content a:hover {
-  background:#6a0dad; 
+  background:#bb6504; 
   padding-left:15px;
 }
 
 h1 {
   text-align: center;
-  color: #8a2be2; /* tom de verde/azul vibrante */
+  color: #db700c; 
   margin-bottom: 30px;
   font-weight: 700;
 }
@@ -189,15 +189,15 @@ h1 {
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #8a2be2;
+  background-color: #db700c;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px #6a0dad;
+  box-shadow: 0 0 10px #bb6504;
 }
 
 .faq-item {
   margin-bottom: 15px;
-  border-bottom: 1px solid #6a0dad;
+  border-bottom: 1px solid #bb6504;
 }
 
 summary {
@@ -224,18 +224,18 @@ summary::-webkit-details-marker {
   font-size: 1rem;
   line-height: 1.5;
   color: #ffffff;
-  background-color: #6a0dad;
+  background-color: #bb6504;
   border-radius: 0 0 10px 10px;
   margin-top: 0;
 }
 
 .faq-item p a {
-  color: #8a2be2;
+  color: #db700c;
   text-decoration: underline;
 }
 
 .faq-item p a:hover {
-  color: #8a2be2;
+  color: #db700c;
 }
 
 .faq-item .content {
@@ -268,11 +268,11 @@ summary::-webkit-details-marker {
 
 .cookie-notice button {
   margin-top:10px; padding:8px 20px;
-  background:#8a2be2; color:#fff; border:none;
+  background:#db700c; color:#fff; border:none;
   border-radius:5px; cursor:pointer;
   transition:all .3s ease;
 }
-.cookie-notice button:hover { background:#6a0dad }
+.cookie-notice button:hover { background:#bb6504}
 
 /* ======== RODAPù ======== */
 footer.rodape {

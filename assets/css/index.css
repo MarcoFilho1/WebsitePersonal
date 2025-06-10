@@ -14,7 +14,7 @@ body {
   background:#f5f5f5; color:#333;
   line-height:1.6; letter-spacing:.5px;
   -webkit-font-smoothing:antialiased;
-  padding-top:125px;
+  padding-top:100px;
 }
 
 /* ======== TOP BAR ======== */
@@ -53,7 +53,7 @@ body {
 }
 
 .social-icons a:hover {
-  color: #8a2be2;
+  color: #db700c;
 }
 
 /* ======== CABEÇALHO ======== */
@@ -79,7 +79,7 @@ header {
 }
 
 .logo img { 
-  width:100px; 
+  width:110px; 
   transition:transform .3s 
 }
 
@@ -114,7 +114,7 @@ nav a {
 }
 
 nav a:hover { 
-  background:#8a2be2; 
+  background:#db700c; 
   transform:translateX(5px) 
 }
 
@@ -175,7 +175,7 @@ nav a:hover::after {
 }
 
 .dropdown-content a:hover {
-  background:#6a0dad; 
+  background:#bb6504; 
   padding-left:15px;
 }
 
@@ -266,7 +266,7 @@ nav a:hover::after {
 
 /* ======== QUEM SOMOS ======== */
 .quemsomos {
-  background: linear-gradient(45deg, #4b0082, #8a2be2);
+  background: linear-gradient(45deg, #bb6504, #db700c);
   color: white;
   padding: 80px 20px;
 }
@@ -310,46 +310,6 @@ nav a:hover::after {
   line-height: 1.8;
 }
 
-/* Valores */
-.quemsomos__valores {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.valor {
-  background: white;
-  color: #003366;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  flex: 1;
-  transition: all 0.3s ease;
-}
-
-.valor:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.valor i {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #8a2be2;
-}
-
-.valor h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.valor p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -377,7 +337,7 @@ nav a:hover::after {
 
 .destaques li::before {
   content: "";
-  color: #8a2be2;
+  color: #db700c;
   position: absolute;
   left: -20px;
 }
@@ -390,7 +350,7 @@ nav a:hover::after {
 }
 
 .valores-lista i {
-  color: #8a2be2;
+  color: #db700c;
   min-width: 25px;
   text-align: center;
 }
@@ -416,7 +376,7 @@ nav a:hover::after {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #1a1a1a;
-  border-left: 5px solid #8a2be2;
+  border-left: 5px solid #db700c;
   padding-left: 15px;
 }
 
@@ -653,7 +613,7 @@ nav a:hover::after {
 
 .produto__icone {
   margin-bottom: 15px;
-  color: #8a2be2; /* você pode mudar a cor para combinar com o site */
+  color: #db700c; /* você pode mudar a cor para combinar com o site */
 }
 
 
@@ -685,11 +645,11 @@ nav a:hover::after {
 /* ======== BOT�ES ======== */
 .button {
   display:inline-block; padding:10px 25px;
-  background:#8a2be2; color:#fff; border-radius:6px;
+  background:#db700c; color:#fff; border-radius:6px;
   text-decoration:none; font-weight:600;
   transition:all .3s ease;
 }
-.button:hover { background:#6a0dad; transform:translateY(-2px) }
+.button:hover { background:#bb6504; transform:translateY(-2px) }
 
 /* ======== COOKIE NOTICE ======== */
 .cookie-notice {
@@ -703,11 +663,11 @@ nav a:hover::after {
 
 .cookie-notice button {
   margin-top:10px; padding:8px 20px;
-  background:#8a2be2; color:#fff; border:none;
+  background:#db700c; color:#fff; border:none;
   border-radius:5px; cursor:pointer;
   transition:all .3s ease;
 }
-.cookie-notice button:hover { background:#6a0dad }
+.cookie-notice button:hover { background:#bb6504 }
 
 /* ======== RODAP� ======== */
 footer.rodape {

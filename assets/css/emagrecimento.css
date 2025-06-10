@@ -2,14 +2,14 @@
 
 /* ======== Variáveis ======== */
 :root {
-  --primary-color: #8a2be2;
-  --primary-dark: #6a0dad;
+  --primary-color: #db700c;
+  --primary-dark: #bb6504;
   --black: #000;
   --white: #fff;
   --gray-light: #f5f5f5;
   --gray-dark: #333;
   --text-color: #333;
-  --gradient-dark: linear-gradient(135deg, #2a0f3d, #1a0e27);
+  --gradient-dark: linear-gradient(135deg, #3d280f, #271d0e);
 }
 
 /* ======== Animações ======== */
@@ -28,7 +28,7 @@ body {
   line-height:1.6;
   letter-spacing:.5px;
   -webkit-font-smoothing:antialiased;
-  padding-top:125px;
+  padding-top:100px;
 }
 
 /* ======== TOP BAR ======== */
@@ -40,39 +40,40 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--black);
+  background-color: #000;
   padding: 6px 15px;
+  font-family: Arial, sans-serif;
   font-size: 14px;
-  color: var(--white);
+  color: #fff;
   z-index: 1001;
   height: 30px;
 }
 
 .social-icons {
-  display: flex;
-  gap: 12px;
-}
+    display: flex;
+    gap: 12px;
+  }
 
 .social-icons a {
-  color: var(--white);
+  color: white;
   font-size: 18px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
+/* Só mostra os ícones do menu lateral no mobile */
+.mobile-social-icons {
+  display: none;
+}
+
 .social-icons a:hover {
-  color: var(--primary-color);
+  color: #db700c;
 }
 
 /* ======== CABEÇALHO ======== */
 header {
-  position:fixed; 
-  top:0; 
-  width:100%; 
-  z-index:1000;
-  background:var(--black); 
-  color:var(--white); 
-  padding:12px 0;
+  position:fixed; top:0; width:100%; z-index:1000;
+  background:#000; color:#fff; padding:12px 0;
   box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
 
@@ -92,7 +93,7 @@ header {
 }
 
 .logo img { 
-  width:100px; 
+  width:110px; 
   transition:transform .3s 
 }
 
@@ -117,7 +118,7 @@ nav a {
   position:relative; 
   display:inline-block;
   text-decoration:none; 
-  color:var(--white); 
+  color:#fff; 
   font-weight:600;
   padding:6px 12px; 
   border-radius:6px; 
@@ -127,7 +128,7 @@ nav a {
 }
 
 nav a:hover { 
-  background:var(--primary-color); 
+  background:#db700c; 
   transform:translateX(5px) 
 }
 
@@ -138,7 +139,7 @@ nav a::after {
   left:0;
   width:0; 
   height:2px; 
-  background:var(--white);
+  background:#fff;
   transition:width .3s ease;
 }
 
@@ -155,7 +156,7 @@ nav a:hover::after {
   position:absolute; 
   top:100%; 
   left:0;
-  background:var(--gray-dark); 
+  background:#333; 
   border-radius:6px;
   box-shadow:0 4px 12px rgba(0,0,0,.15);
   min-width:160px; 
@@ -176,7 +177,7 @@ nav a:hover::after {
   display:block; 
   padding:8px 12px;
   font-size:.85rem; 
-  color:var(--white);
+  color:#fff;
   transform:translateX(-10px); 
   opacity:0;
   transition:all .3s ease;
@@ -188,9 +189,10 @@ nav a:hover::after {
 }
 
 .dropdown-content a:hover {
-  background:var(--primary-dark); 
+  background:#bb6504; 
   padding-left:15px;
 }
+
 
 /* ======== HERO SECTION ======== */
 .apresentacao {
@@ -493,7 +495,7 @@ nav a:hover::after {
 }
 
 .cta-final h2 {
-  color: #d88cff;
+  color: #ff7b00;
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }
@@ -565,9 +567,17 @@ nav a:hover::after {
 }
 
 /* ======== RESPONSIVIDADE ======== */
+
+/* ========== ESCONDENDO O MENU HAMBURGUER DESKTOP =======*/
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   body {
-    padding-top: 90px;
+    padding-top: 60px;
   }
   
   .apresentacao {
@@ -597,39 +607,51 @@ nav a:hover::after {
     display: block;
     position: relative;
     z-index: 1001;
-    padding: 5px;
+    order: 2;
+    padding: 5px; /* Reduz padding para ocupar menos espa?o */
     font-size: 1.3rem;
-    cursor: pointer;
+    margin-top: 0; /* Remove margem extra */
   }
 
   nav {
     position: fixed;
     top: 30px;
     right: -100%;
-    width: 70%;
-    height: calc(100vh - 30px);
-    background: var(--black);
+    width: 55%;
+    background: #000;
     transition: all 0.3s ease-out;
     z-index: 999;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.3);
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 60px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  }
+
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    display: none;
   }
 
   nav.active {
     right: 0;
   }
 
+  nav.active + .nav-overlay {
+    display: block;
+  }
+
   nav ul.menu {
+    padding-top: 70px; /* Altura do header */
     flex-direction: column;
-    width: 100%;
     padding: 0;
   }
 
   nav ul.menu li {
     width: 100%;
-    text-align: center;
+    border-bottom: 0px solid #333;
   }
 
   nav ul.menu li a {
@@ -642,6 +664,26 @@ nav a:hover::after {
     width: 0;
   }
 
+    /* 1) Desativa TUDO de hover/underline nas ?ncoras */
+  nav ul.menu li a,
+  nav ul.menu li a:visited,
+  nav ul.menu li a:hover,
+  nav ul.menu li a:focus {
+    display: block;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none !important;
+  }
+
+  /* elimina a barra de hover que vinha do ::after */
+  nav ul.menu li a::after,
+  nav ul.menu li a:hover::after {
+    content: none !important;
+    width: 0 !important;
+    background: none !important;
+    text-decoration: none !important;
+  }
+
   .dropdown-content {
     position: static;
     display: none;
@@ -650,29 +692,148 @@ nav a:hover::after {
     width: 100%;
   }
 
+  .dropdown-content a {
+    padding: 12px 25px;
+    font-size: 0.9em;
+  }
+
+  .dropdown > a {
+    position: relative;
+    padding-right: 30px; /* espa?o p/ a seta */
+  }
+
+  .dropdown > a::after {
+    content: '▾';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    transition: transform 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .dropdown.active > a::after {
+    transform: translateY(-50%) rotate(-90deg);
+    text-decoration: none !important;
+  }
+
   .dropdown.active .dropdown-content {
-    display: block;
+    display: block !important;
   }
   
-  .mobile-social-icons {
-    display: flex;
+
+
+  /* ======== AJUSTES GERAIS ======== */
+  .header-container {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    order: 0;
+  }
+
+  header {
+    padding: 0; /* Reduzi o padding vertical */
+    height: 70px; /* Defini uma altura fixa */
+  }
+
+  .header-container {
+    padding: 5px 10px !important; /* Reduzir espa?amento interno */
+    min-height: 60px; /* Garantir altura m?nima */
+  }
+
+  .logo img {
+    width: 60px; /* Reduzi um pouco o tamanho da logo */
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 30px 0;
   }
   
-  .mobile-social-icons a {
-    color: var(--white);
-    font-size: 1.5rem;
+  .hero {
+    flex-direction: column;
+    height: auto;
   }
   
+  .hero-carousel {
+    height: 250px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: -10px; /* Compensar espa?o residual */
+  }
+  
+  .carousel-track {
+    height: 100%
+  }
+
+  .carousel-slide {
+    height: 250px;
+    position: relative;
+  }
+
+  .carousel-btn {
+    font-size: 1.2rem !important;
+    padding: 5px 8px !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .prev-btn {
+    left: 2px;
+  }
+
+  .next-btn {
+    right: 2px;
+  }
+
+  .slide-img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Garante o enquadramento correto */
+  }
+
+  .hero-description {
+    margin-top: 10px;
+    padding: 15px;
+  }
+
   .top-bar .social-icons {
     display: none;
   }
+
+  .social-icons-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .social-icons-mobile a {
+    color: white;
+    font-size: 1.4rem;
+  }
 }
 
-@media (min-width: 769px) {
-  .hamburger, .mobile-social-icons {
-    display: none !important;
+
+@media(max-width: 480px) {
+  nav a {
+    font-size: .85rem;
+    padding: 5px 8px;
+  }
+
+  .contact {
+    font-size: .85rem;
+    
+  }
+  
+  .hero-description h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description p {
+    font-size: 0.9rem;
   }
 }
