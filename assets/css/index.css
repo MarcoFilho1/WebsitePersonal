@@ -908,7 +908,7 @@ footer.rodape {
 
   header {
     padding: 0; /* Reduzi o padding vertical */
-    height: 70px; /* Defini uma altura fixa */
+    height: 60px; /* Defini uma altura fixa */
   }
 
   .header-container {
