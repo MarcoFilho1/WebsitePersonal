@@ -308,7 +308,7 @@ nav a:hover::after {
 
 .cookie-notice button {
   margin-top:10px; padding:8px 20px;
-  background:#db700c; color:#fff; border:none;
+  background:#8a2be2; color:#fff; border:none;
   border-radius:5px; cursor:pointer;
   transition:all .3s ease;
 }
