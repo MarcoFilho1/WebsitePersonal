@@ -2,14 +2,14 @@
 
 /* ======== Variáveis ======== */
 :root {
-  --primary-color: #db700c;
-  --primary-dark: #bb6504;
+  --primary-color: #8a2be2;
+  --primary-dark: #6a0dad;
   --black: #000;
   --white: #fff;
   --gray-light: #f5f5f5;
   --gray-dark: #333;
   --text-color: #333;
-  --gradient-dark: linear-gradient(135deg, #3d290f, #27190e);
+  --gradient-dark: linear-gradient(135deg, #240f3d, #1b0e27);
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   --radius: 8px;
 }
@@ -69,7 +69,7 @@ body {
 }
 
 .social-icons a:hover {
-  color: #db700c;
+  color: #8a2be2;
 }
 
 /* ======== CABEÇALHO ======== */
@@ -130,7 +130,7 @@ nav a {
 }
 
 nav a:hover { 
-  background:#db700c; 
+  background:#8a2be2; 
   transform:translateX(5px) 
 }
 
@@ -191,7 +191,7 @@ nav a:hover::after {
 }
 
 .dropdown-content a:hover {
-  background:#bb6504; 
+  background:#6a0dad; 
   padding-left:15px;
 }
 
@@ -505,7 +505,7 @@ nav a:hover::after {
 }
 
 .cta-final h2 {
-  color: #ff9100;
+  color: #8a2be2;
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }

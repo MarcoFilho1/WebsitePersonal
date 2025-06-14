@@ -9,15 +9,15 @@
 
 /* ======== VARIÁVEIS ======== */
 :root {
-  --primary: #ff7b00;
-  --primary-dark: #bb6504;
+  --primary: #8a2be2;
+  --primary-dark: #6a0dad;
   --black: #121212;
   --white: #ffffff;
   --gray-light: #f5f5f5;
   --gray-medium: #e0e0e0;
   --gray-dark: #333333;
   --text-color: #333333;
-  --gradient: linear-gradient(135deg, #ff7b00, #b15500);
+  --gradient: linear-gradient(135deg, #8a2be2, #6a0dad);
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   --radius: 8px;
 }
@@ -68,7 +68,7 @@ body {
 }
 
 .social-icons a:hover {
-  color: #db700c;
+  color:  #8a2be2;
 }
 
 /* ======== CABE�ALHO ======== */
@@ -129,7 +129,7 @@ nav a {
 }
 
 nav a:hover { 
-  background:#db700c; 
+  background: #8a2be2; 
   transform:translateX(5px) 
 }
 
@@ -190,13 +190,13 @@ nav a:hover::after {
 }
 
 .dropdown-content a:hover {
-  background:#bb6504; 
+  background:#6a0dad; 
   padding-left:15px;
 }
 
 h1 {
   text-align: center;
-  color: #ff7b00; 
+  color:  #8a2be2; 
   margin-bottom: 30px;
   font-weight: 700;
 }
@@ -278,11 +278,11 @@ h1 {
 
 .cookie-notice button {
   margin-top:10px; padding:8px 20px;
-  background:#db700c; color:#fff; border:none;
+  background: #8a2be2; color:#fff; border:none;
   border-radius:5px; cursor:pointer;
   transition:all .3s ease;
 }
-.cookie-notice button:hover { background:#bb6504}
+.cookie-notice button:hover { background:#6a0dad}
 
 /* ======== FOOTER ======== */
 .site-footer {

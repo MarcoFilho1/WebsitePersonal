@@ -9,15 +9,15 @@
 
 /* ======== VARIÁVEIS ======== */
 :root {
-  --primary: #ff7b00;
-  --primary-dark: #bb6504;
+  --primary: #8a2be2;
+  --primary-dark: #6a0dad;
   --black: #121212;
   --white: #ffffff;
   --gray-light: #f5f5f5;
   --gray-medium: #e0e0e0;
   --gray-dark: #333333;
   --text-color: #333333;
-  --gradient: linear-gradient(135deg, #ff7b00, #b15500);
+  --gradient: linear-gradient(135deg, #8a2be2, #6a0dad);
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   --radius: 8px;
 }
@@ -68,7 +68,7 @@ body {
 }
 
 .social-icons a:hover {
-  color: #db700c;
+  color: #8a2be2;
 }
 
 /* ======== CABEÇALHO ======== */
@@ -129,7 +129,7 @@ nav a {
 }
 
 nav a:hover { 
-  background:#db700c; 
+  background:#8a2be2; 
   transform:translateX(5px) 
 }
 
@@ -190,7 +190,7 @@ nav a:hover::after {
 }
 
 .dropdown-content a:hover {
-  background:#bb6504; 
+  background:#6a0dad; 
   padding-left:15px;
 }
 
@@ -281,7 +281,7 @@ nav a:hover::after {
 
 /* ======== QUEM SOMOS ======== */
 .quemsomos {
-  background: linear-gradient(45deg, #bb6504, #db700c);
+  background: linear-gradient(45deg, #8a2be2, #6a0dad);
   color: white;
   padding: 80px 20px;
 }
@@ -352,7 +352,7 @@ nav a:hover::after {
 
 .destaques li::before {
   content: "";
-  color: #db700c;
+  color: #8a2be2;
   position: absolute;
   left: -20px;
 }
@@ -365,7 +365,7 @@ nav a:hover::after {
 }
 
 .valores-lista i {
-  color: #db700c;
+  color: #8a2be2;
   min-width: 25px;
   text-align: center;
 }
@@ -391,7 +391,7 @@ nav a:hover::after {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #1a1a1a;
-  border-left: 5px solid #db700c;
+  border-left: 5px solid #8a2be2;
   padding-left: 15px;
 }
 
@@ -628,7 +628,7 @@ nav a:hover::after {
 
 .produto__icone {
   margin-bottom: 15px;
-  color: #db700c; /* você pode mudar a cor para combinar com o site */
+  color: #8a2be2; /* você pode mudar a cor para combinar com o site */
 }
 
 
@@ -660,11 +660,11 @@ nav a:hover::after {
 /* ======== BOT�ES ======== */
 .button {
   display:inline-block; padding:10px 25px;
-  background:#db700c; color:#fff; border-radius:6px;
+  background:#8a2be2; color:#fff; border-radius:6px;
   text-decoration:none; font-weight:600;
   transition:all .3s ease;
 }
-.button:hover { background:#bb6504; transform:translateY(-2px) }
+.button:hover { background:#6a0dad; transform:translateY(-2px) }
 
 /* ======== COOKIE NOTICE ======== */
 .cookie-notice {
@@ -678,11 +678,11 @@ nav a:hover::after {
 
 .cookie-notice button {
   margin-top:10px; padding:8px 20px;
-  background:#db700c; color:#fff; border:none;
+  background:#8a2be2; color:#fff; border:none;
   border-radius:5px; cursor:pointer;
   transition:all .3s ease;
 }
-.cookie-notice button:hover { background:#bb6504 }
+.cookie-notice button:hover { background:#6a0dad }
 
 /* ======== FOOTER ======== */
 .site-footer {
